@@ -3,35 +3,67 @@
 // Import a Google Font
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
 
+html, body, #root, #root>div {
+    height: 100%
+}
+
 // Set your brand colors
-$purple: #8A4D76;
-$pink: #FA7C91;
-$brown: #757763;
-$beige-light: #D0D1CD;
-$beige-lighter: #EFF0EB;
+$black: rgb(227, 227, 236);
+$black-bis: rgb(160, 160, 209); 	
+$black-ter: rgb(171, 104, 247); 	
+$grey-darker: rgb(226, 178, 248);
+$grey-dark: rgb(214, 199, 240);
+$grey: rgb(159, 159, 240);
+$grey-light: rgb(29, 5, 114);
+$grey-lighter: rgb(76, 8, 139);
+$grey-lightest: rgb(62, 23, 124);
+$white-ter: rgb(38, 38, 107);
+$white-bis: rgb(7, 7, 78);
+$white: rgb(24, 24, 77);
+// $orange 	color 	hsl(14, 100%, 53%)
+// $yellow 	color 	hsl(48, 100%, 67%)
+// $green 	color 	hsl(141, 53%, 53%)
+// $turquoise 	color 	hsl(171, 100%, 41%)
+// $cyan 	color 	hsl(204, 71%, 53%)
+// $blue 	color 	hsl(217, 71%, 53%)
+$turquoise: #32d99a;
+// $red 	color 	hsl(348, 86%, 61%)
+$family-sans-serif: "Helvetica", "Arial", sans-serif;
+// $family-monospace 	font-family 	monospace
+// $render-mode
+
+.pf-main {
+    background-color: rgb(23, 23, 65);
+    border-top: 1px solid rgb(78, 78, 155);
+    padding: 5px;
+}
+
+.pf-sidenav {
+    border-top: 1px solid rgb(78, 78, 155);
+    border-right: 1px solid rgb(78, 78, 155);
+}
+
+.menu-list .is-active {
+    border-left: 3px solid $turquoise;
+}
 
 // Update Bulma's global variables
-$family-sans-serif: "Nunito", sans-serif;
-$grey-dark: $brown;
-$grey-light: $beige-light;
-$primary: $purple;
-$link: $pink;
-$widescreen-enabled: false;
-$fullhd-enabled: false;
+$link: $white-ter;
+$link-invert: $turquoise;
+// $scheme-main: $blue-darker;
+// $primary: $blue-lighter;
+// $link: $blue-light;
+// $family-sans-serif: "Nunito", sans-serif;
+// $body-background-color: $blue-dark;
+// $background: $blue-dark;
+// $link-focus: $purple;
+
+// $widescreen-enabled: false;
+// $fullhd-enabled: false;
 
 // Update some of Bulma's component variables
-$body-background-color: $beige-lighter;
-$control-border-width: 2px;
-$input-border-color: transparent;
-$input-shadow: none;
+$menu-item-radius: 0;
+$menu-list-link-padding: 0.5rem 1rem;
 
 // Import only what you need from Bulma
-@import "bulma/sass/utilities/_all.sass";
-@import "bulma/sass/base/_all.sass";
-@import "bulma/sass/elements/button.sass";
-@import "bulma/sass/elements/container.sass";
-@import "bulma/sass/elements/title.sass";
-@import "bulma/sass/form/_all.sass";
-@import "bulma/sass/components/navbar.sass";
-@import "bulma/sass/layout/hero.sass";
-@import "bulma/sass/layout/section.sass";
+@import "bulma/bulma.sass";

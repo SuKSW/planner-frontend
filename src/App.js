@@ -1,40 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Route, Switch } from 'react-router-dom';
 import './App.scss';
 
+import { Dashboard, Todos, Appointments, Notes } from './components/main'
+import TopNavbar from './components/sections/topNavbar'
+import SideNavbar from './components/sections/sideNavbar'
+
 function App() {
-  return (
-    <div className="App">
-      <h1 class="title">
-        Bulma
-      </h1>
-
-      <p class="subtitle">
-        Modern CSS framework based on <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox">Flexbox</a>
-      </p>
-
-      <div class="field">
-        <div class="control">
-          <input class="input" type="text" placeholder="Input"/>
-        </div>
-      </div>
-
-      <div class="field">
-        <p class="control">
-          <span class="select">
-            <select>
-              <option>Select dropdown</option>
-            </select>
-          </span>
-        </p>
-      </div>
-
-      <div class="buttons">
-        <a class="button is-primary">Primary</a>
-        <a class="button is-link">Link</a>
-      </div>
-    </div>
-  );
+    return (
+        <React.StrictMode>
+            {/* Todo: show only after login */}
+            <TopNavbar />
+            <div class="columns is-gapless">
+                <SideNavbar class="column pf-sidenav is-2 is-hidden-touch" />
+                <main class="column pf-main">
+                    <div>
+                        <Switch>
+                            <Route path="/" component={Dashboard} exact />
+                            <Route path="/todos" component={Todos} />
+                            <Route path="/appointments" component={Appointments} />
+                            <Route path="/notes" component={Notes} />
+                    </Switch>
+                    </div>
+                </main>
+            </div>
+        </React.StrictMode>
+    );
 }
 
 export default App;
